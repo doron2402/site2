@@ -16,3 +16,18 @@ $(function() {
     }
   });
 });
+
+/*
+  Contact Form
+*/
+$(function() {
+  $( "form#contact" ).on( "submit", function( event ) {
+    event.preventDefault();
+    var data = $(this).serializeArray();
+    var dataJson = {};
+    data.forEach(function(obj){
+      dataJson[obj.name] = obj.value;
+    });
+    console.log(dataJson);
+  });
+});
